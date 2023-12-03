@@ -1,0 +1,144 @@
+p::first-letter {
+    color: blue;
+    font-size: 3rem;
+}
+
+p:not(:first-child)::first-letter {
+    color: blue;
+    font-size: 3rem;
+}
+
+input[type="text"] {
+    border: 1px solid gold;
+}
+
+/* :not([class="container"]) */
+
+div {
+    color: burlywood;
+}
+
+div::before {
+    color: #333;
+    content: '"';
+    font-size: 2rem;
+}
+  
+div::after {
+    color: #333;
+    content: '"';
+    font-size: 2rem;
+}
+
+/* Selects every <li> elements that is the first child of its parent */
+ul.example-one li:first-child {
+    color: blue;
+}
+
+/* Selects every <li> elements that is the last child of its parent */
+ul.example-two li:last-child {
+    color: blue;
+}
+
+/* Selects every <li> element that is the first <p> element of its parent */
+ul.example-three li:first-of-type {
+    font-weight: bold;
+}
+
+/* Selects every <li> elements that is the last child of its parent */
+ul.example-four li:last-of-type {
+    text-decoration: underline;
+}
+
+/* Selects every <ul> element that is odd child of its parent */
+ul.example-five li:nth-child(odd) {
+    background-color: lightgray;
+}
+
+/* Selects every <li> element that is the third <li> element of its parent */
+ul.example-six li:nth-of-type(3) {
+    font-style: italic;
+}
+
+/* Selects every <p> element that is the only <span> element of its parent */
+.container span:only-of-type {
+    border: 1px solid red;
+}
+
+/* 
+The :first-child selector targets the first child element of its parent.
+The :first-of-type selector targets the first element of its type
+*/
+  
+.decorative-box {
+    position: relative;
+    color: brown;   
+    margin: 1rem;
+}
+
+.decorative-box::before,
+.decorative-box::after {
+  content: '';
+  width: 20px;
+  height: 4px;
+  background: brown;
+  position: absolute;
+}
+
+.decorative-box::after {
+    transform: rotate(180deg);
+    left: -7px;
+    top: -5px;
+}
+
+.decorative-box::before {
+    transform: rotate(-90deg);
+    left: -15px;
+    top: 5px;
+}
+
+.decorative-button {
+    padding: 10px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    background: white;
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.decorative-button::after {
+    content: '';
+    background-image: url('https://static.thenounproject.com/png/1191603-200.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+
+.decorative-button {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+article {
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    background-color: gainsboro;
+    border-radius: 20px;
+    position: relative;
+}
+
+article::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: -5px;
+    top: 20px;
+    transform: rotate(-45deg);
+    background-color: gainsboro;
+}
